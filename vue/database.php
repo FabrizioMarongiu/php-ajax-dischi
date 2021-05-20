@@ -46,6 +46,5 @@
     ];
 
 header('Content-Type: application/json');
-echo json_endcode($database);
+echo json_encode($database);
 
-?>

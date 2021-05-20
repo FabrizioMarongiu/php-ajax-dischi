@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet"> 
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>VUE Dischi</title>
 </head>
 <body>
@@ -19,13 +21,14 @@
     <main>
         <div class="container">
             <div class="music-list">
-                <div class="album">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" alt="">
+                <div class="album"
+                v-for="element in music">
+                    <img :src="element.poster" alt="">
 
-                    <h4>New Jersey</h4>
-                    <h5>Bon Jovi</h5>
-                    <h4>1988</h4>
-                    <h5>Rock</h5>
+                    <h4>{{ element.title}}</h4>
+                    <h5>{{element.author}}</h5>
+                    <h4>{{element.yesr}}</h4>
+                    <h5>{{element.genre}}</h5>
 
 
                 </div>
@@ -37,6 +40,7 @@
     </main>
     </div>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

@@ -1,17 +1,25 @@
 const app = new Vue(
     {
-el: 'app',
+el: '#app',
 
 data: {
-    api: [],
+    music: [],
     
 },
 created(){
-        axios.get(this.api)
-        .then(response =>{
+// OTTENIAMO I DATI
+    console.log(window.location)
+
+    const dataURL = window.location.href + 'database.php';
+    
+
+        axios
+        .get(dataURL)
+        .then((response) =>{
             console.log(response.data);
+            this.music = response.data;
         })
-        .catch(error =>{
+        .catch((error) =>{
             console.log(error);
         });
     }
