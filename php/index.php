@@ -1,3 +1,7 @@
+<?php
+include __DIR__ . '/database.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +23,24 @@
     <main>
         <div class="container">
             <div class="music-list">
+                <?php
+                    foreach($database as $key => $data){?>
                 <div class="album">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" alt="">
+                    
 
-                    <h4>New Jersey</h4>
-                    <h5>Bon Jovi</h5>
-                    <h4>1988</h4>
-                    <h5>Rock</h5>
+                    <img src=<?php echo $data['poster'] ?> alt="">
+
+                    <h4><?php echo $data['title'] ?></h4>
+                    <h5><?php echo $data['author'] ?></h5>
+                    <h4><?php echo $data['year'] ?></h4>
+                    <h5><?php echo $data['genre'] ?></h5>
+                  
+                    
 
 
                 </div>
-
+                <?php }
+                    ?>
                 
                 
             </div>
