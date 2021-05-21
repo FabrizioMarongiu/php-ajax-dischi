@@ -45,6 +45,35 @@
         ]
     ];
 
+
+
+
+// Array dove salvo il risultato della ricerca
+ $newDatabase = [];
+
+// Variabile dove salvo la scelta dell'utente
+ $scelta = $_GET['scelta'];
+
+
+if($scelta === 'all' || $scelta === ''){
+// CONTENT TYPE JSON
 header('Content-Type: application/json');
+
+// CONVERSION DATA IN JSON AND PRINT
 echo json_encode($database);
+}else{
+    foreach($database as $key => $element){
+        if($scelta === strtolower($element['author']) ){
+            
+            $newDatabase [] = $element;
+        }
+        // var_dump($element);
+ }   
+//  var_dump($newDatabase);
+ // CONTENT TYPE JSON
+ header('Content-Type: application/json');
+
+ // CONVERSION DATA IN JSON AND PRINT
+ echo json_encode($newDatabase);
+ }
 

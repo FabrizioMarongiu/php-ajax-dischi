@@ -24,7 +24,7 @@ include __DIR__ . '/database.php'
         <div class="container">
             <div class="music-list">
                 <?php
-                    foreach($database as $key => $data){?>
+                    foreach($database as $data){?>
                 <div class="album">
                     
 

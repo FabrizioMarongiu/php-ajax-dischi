@@ -16,6 +16,18 @@
     <header class="header">
         <div class="container">
             <img src="../php-dischi/logo.png" alt="">
+            <div class="select">
+                <select name="artist" id="artista"
+                v-model="choice"
+                @change="search">
+                    <option
+                    v-for="element in artists" 
+                    :value="element">
+                    {{element}}
+                    </option>
+                    
+                </select>
+            </div>
         </div>
     </header>
     <main>
@@ -23,15 +35,15 @@
             <div class="music-list">
                 <div class="album"
                 v-for="element in music">
-                    <img :src="element.poster" alt="">
+                    <img :src="element.poster" :alt="element.title">
 
                     <h4>{{ element.title}}</h4>
                     <h5>{{element.author}}</h5>
-                    <h4>{{element.yesr}}</h4>
+                    <h4>{{element.year}}</h4>
                     <h5>{{element.genre}}</h5>
 
 
-                </div>
+                </div> 
 
                 
                 
