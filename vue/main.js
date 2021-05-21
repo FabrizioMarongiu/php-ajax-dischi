@@ -35,7 +35,7 @@ created(){
             axios
             .get(dataURL)
             .then((response) =>{
-                console.log(response.data);
+                console.log(response);
                 this.music = response.data;
             })
             .catch((error) =>{

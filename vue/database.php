@@ -62,8 +62,8 @@ header('Content-Type: application/json');
 // CONVERSION DATA IN JSON AND PRINT
 echo json_encode($database);
 }else{
-    foreach($database as $key => $element){
-        if($scelta === strtolower($element['author']) ){
+    foreach($database as $element){
+        if(strtolower($scelta) === strtolower($element['author']) ){
             
             $newDatabase [] = $element;
         }

@@ -16,9 +16,7 @@ header {
   height: 70px;
   display: flex;
 }
-header .container {
-  justify-content: space-between;
-}
+
 .container {
   width: 800px;
   height: 100%;
@@ -26,6 +24,7 @@ header .container {
 }
 header .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -46,7 +45,7 @@ main {
   height: 100%;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
